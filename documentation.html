@@ -179,9 +179,9 @@
     }
 
     const changeContentInPDF = (e) => {
-        if (!e instanceof HTMLElement) return
         e.preventDefault();
-        document.querySelector('.active').classList.remove('active');
+        document.querySelectorAll('.active').forEach(_=>{_.classList.remove('active')});
+        console.log(document.querySelectorAll(".active"))
         e.target.classList.add('active');
         document.getElementById("ViewPDF").setAttribute("src", `./docs/${e.target.dataset.index}.pdf`);
     }
