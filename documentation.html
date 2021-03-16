@@ -107,13 +107,13 @@
                                     <a href="#" data-index="8">Основные тенденции развития нормативной базы в мире и в России в области информационных технологий</a>
                                 </li>
                                 <li class="main__menu__item">
-                                    <a href="#" data-index="9">Государственный контроль и надзор за соблюдением государственных стандартов.</a>
+                                    <a href="#" data-index="9">Государственный контроль и надзор за соблюдением государственных стандартов</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-9 h-100" style="" id="kurs">
+                <div class="col-md-9 h-100" id="kurs">
                     <div class="main__content h-100">
                         <div class="main__content_container p-2 h-100">
                             <iframe style="height: 75vh;" id="ViewPDF" src="docs/ГСИ.pdf" frameborder="0" width="100%" height="100%"></iframe>
@@ -144,7 +144,7 @@
 <!-- Gorizontal scroll-->
 <!--<script src="js/gorizontal-scroll.js"></script>-->
 
-<script>
+<script defer>
     if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
         console.log('this is a touch device');
     } else {
@@ -160,7 +160,7 @@
     // iframe.height($(document.body).height() + additionHeight);
 </script>
 
-<script>
+<script defer>
     var prevent = $(".bold-link")[0];
     $(".bold-link-container a, .link-in-container a").click(function (event) {
         prevent.style.textDecoration = 'none';
@@ -170,10 +170,11 @@
     });
 </script>
 
-<script>
+<script defer>
     const articleBtnControlls = document.getElementById("articleControlls").querySelectorAll("a")
 
     const changeContentInPDF = (e) => {
+        if (!e instanceof HTMLElement) return
         e.preventDefault();
         document.querySelector('.active').classList.remove('active');
         e.target.classList.add('active');
