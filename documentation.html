@@ -181,7 +181,6 @@
     const changeContentInPDF = (e) => {
         e.preventDefault();
         document.querySelectorAll('.active').forEach(_=>{_.classList.remove('active')});
-        console.log(document.querySelectorAll(".active"))
         e.target.classList.add('active');
         document.getElementById("ViewPDF").setAttribute("src", `./docs/${e.target.dataset.index}.pdf`);
     }
